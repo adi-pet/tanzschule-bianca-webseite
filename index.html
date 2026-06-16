@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tanzschule Bianca Fackler – Moderne Musterwebseite</title>
+  <meta name="description" content="Musterwebseite für die Mobile Tanzschule Bianca Fackler: Tanzkurse, Hochzeitstanz, Kinderkurse, Privatstunden und Workshops in Ravensburg, Kempten, Vogt, Krauchenwies und Umgebung." />
+  <meta name="theme-color" content="#2f1b33" />
+  <style>
+    :root {
+      --ink: #211923;
+      --muted: #6f6472;
+      --soft: #f8f2ed;
+      --paper: #fffaf6;
+      --line: rgba(33, 25, 35, .12);
+      --brand: #7b2347;
+      --brand-2: #d48b55;
+      --brand-3: #2f1b33;
+      --mint: #e9f4ee;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(47, 27, 51, .14);
+      --shadow-soft: 0 16px 40px rgba(47, 27, 51, .10);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1180px;
+      --focus: 0 0 0 4px rgba(212, 139, 85, .35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(212,139,85,.18), transparent 32rem),
+        linear-gradient(180deg, #fffaf6 0%, #f8f2ed 54%, #fffaf6 100%);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, select, textarea { font: inherit; }
+    :focus-visible { outline: none; box-shadow: var(--focus); border-radius: 12px; }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      background: var(--brand-3);
+      color: white;
+      padding: .75rem 1rem;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .topbar {
+      background: var(--brand-3);
+      color: rgba(255,255,255,.92);
+      font-size: .92rem;
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: .55rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .topbar a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 250, 246, .84);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: .95rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      min-width: 220px;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      box-shadow: var(--shadow-soft);
+    }
+    .brand strong { display: block; letter-spacing: -.02em; }
+    .brand span { display: block; color: var(--muted); font-size: .85rem; margin-top: -.15rem; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .nav-links a { padding: .55rem .35rem; }
+    .nav-links a:hover { color: var(--brand); }
+
+    .actions { display: flex; gap: .7rem; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: .76rem 1rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--brand); color: white; box-shadow: 0 10px 26px rgba(123,35,71,.22); }
+    .btn-primary:hover { background: #651c3a; }
+    .btn-secondary { background: white; color: var(--ink); border-color: var(--line); }
+    .btn-secondary:hover { box-shadow: var(--shadow-soft); }
+    .btn-ghost { background: transparent; color: var(--brand); border-color: rgba(123,35,71,.22); }
+
+    main { overflow: hidden; }
+    .section { padding: 5rem 1.2rem; }
+    .container { max-width: var(--max); margin: 0 auto; }
+
+    .hero {
+      padding: 5.6rem 1.2rem 4rem;
+    }
+    .hero-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--brand);
+      font-weight: 800;
+      background: rgba(123,35,71,.08);
+      border: 1px solid rgba(123,35,71,.12);
+      padding: .45rem .75rem;
+      border-radius: 999px;
+      font-size: .9rem;
+    }
+    h1, h2, h3 { line-height: 1.05; margin: 0; letter-spacing: -.045em; text-wrap: pretty; }
+    h1 { font-size: clamp(2.55rem, 6vw, 5.8rem); max-width: 11ch; margin-top: 1.2rem; }
+    h2 { font-size: clamp(2rem, 4vw, 3.65rem); max-width: 13ch; }
+    h3 { font-size: 1.35rem; letter-spacing: -.02em; }
+    .lead {
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      max-width: 58ch;
+      margin: 1.25rem 0 0;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .trust-row {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+    .trust-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+    }
+    .dot { width: .5rem; height: .5rem; background: var(--brand-2); border-radius: 50%; }
+
+    .hero-card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .hero-photo {
+      min-height: 500px;
+      border-radius: 26px;
+      background:
+        linear-gradient(160deg, rgba(47,27,51,.18), rgba(123,35,71,.12)),
+        url('assets/real/slide-1.jpg') center / cover;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      align-items: end;
+      padding: 1.2rem;
+    }
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      inset: 12% 9% auto auto;
+      width: 58%;
+      height: 58%;
+      border: 2px solid rgba(123,35,71,.16);
+      border-radius: 999px 999px 999px 16px;
+      transform: rotate(-12deg);
+    }
+    .hero-photo::after {
+      content: "Tanzfreude seit 2008";
+      position: absolute;
+      right: 1.1rem;
+      top: 1.1rem;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 999px;
+      padding: .55rem .8rem;
+      font-weight: 800;
+      color: var(--brand);
+    }
+    .next-course {
+      position: relative;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 22px;
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .next-course small { color: var(--brand); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .next-course p { margin: .35rem 0 0; color: var(--muted); }
+
+    .quick-search {
+      margin-top: 3rem;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .75rem;
+    }
+    .field label { display: block; color: var(--muted); font-size: .82rem; margin: 0 0 .25rem .2rem; font-weight: 700; }
+    .field select, .field input, .field textarea {
+      width: 100%;
+      min-height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      padding: .75rem .85rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .section-head p { color: var(--muted); max-width: 56ch; margin: 0; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .course-card {
+      background: rgba(255,255,255,.76);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .course-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+    .course-card .tag {
+      display: inline-flex;
+      width: fit-content;
+      color: var(--brand);
+      background: rgba(123,35,71,.08);
+      border-radius: 999px;
+      padding: .35rem .65rem;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+    .course-card p { color: var(--muted); margin: .75rem 0 1.4rem; }
+    .course-meta { display: flex; flex-wrap: wrap; gap: .5rem; color: var(--muted); font-size: .9rem; }
+    .course-meta span { background: var(--soft); border: 1px solid var(--line); padding: .34rem .55rem; border-radius: 999px; }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .panel {
+      background: var(--brand-3);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .panel p { color: rgba(255,255,255,.76); }
+    .panel .btn { margin-top: 1rem; }
+
+    .steps { display: grid; gap: .85rem; }
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      background: rgba(255,255,255,.74);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+    }
+    .num {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--brand);
+      color: white;
+      font-weight: 900;
+    }
+    .step p { margin: .3rem 0 0; color: var(--muted); }
+
+    .locations {
+      display: flex;
+      gap: .65rem;
+      flex-wrap: wrap;
+    }
+    .locations a {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .72rem .95rem;
+      color: var(--muted);
+      font-weight: 750;
+    }
+    .locations a:hover { color: var(--brand); border-color: rgba(123,35,71,.28); }
+
+    .testimonial-wrap {
+      background: linear-gradient(135deg, rgba(123,35,71,.08), rgba(212,139,85,.12));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .quote {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .quote blockquote {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -.04em;
+      text-wrap: pretty;
+    }
+    .quote p { color: var(--muted); margin-top: 1rem; }
+
+    .form-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 1.3rem;
+      box-shadow: var(--shadow);
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    .form-grid .wide { grid-column: 1 / -1; }
+    textarea { resize: vertical; min-height: 120px; }
+    .privacy {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: .7rem;
+      align-items: start;
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 1rem 0;
+    }
+    .privacy input { margin-top: .25rem; width: 18px; height: 18px; }
+    .success {
+      display: none;
+      margin-top: 1rem;
+      background: var(--mint);
+      border: 1px solid rgba(30,105,72,.18);
+      color: #22583e;
+      padding: .9rem 1rem;
+      border-radius: 16px;
+      font-weight: 750;
+    }
+    .success.is-visible { display: block; }
+
+
+
+    .image-section{background:rgba(255,255,255,.42);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .gallery-tabs{display:inline-flex;gap:.45rem;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:999px;padding:.35rem;margin-bottom:1.25rem;flex-wrap:wrap}
+    .gallery-tabs button{border:0;border-radius:999px;padding:.62rem .9rem;background:transparent;color:var(--muted);font-weight:800;cursor:pointer;min-height:44px}
+    .gallery-tabs button.is-active{background:var(--brand);color:white}
+    .gallery-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:1rem}
+    .photo-card{position:relative;min-height:260px;overflow:hidden;border-radius:var(--radius-lg);background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+    .photo-card.tall{grid-row:span 2;min-height:540px}.photo-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+    .photo-caption{position:absolute;left:.8rem;right:.8rem;bottom:.8rem;padding:.75rem .85rem;border-radius:16px;color:white;background:linear-gradient(180deg,rgba(47,27,51,.72),rgba(47,27,51,.92));backdrop-filter:blur(8px)}
+    .photo-caption strong{display:block}.photo-caption span{display:block;color:rgba(255,255,255,.78);font-size:.88rem;margin-top:.1rem}
+    .photo-card[data-kind="ai"] .photo-caption::before{content:"AI-Entwurf";display:inline-flex;margin-bottom:.35rem;background:rgba(212,139,85,.96);color:#211923;border-radius:999px;padding:.2rem .5rem;font-size:.74rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+    .asset-note{margin-top:1rem;color:var(--muted);font-size:.95rem;max-width:76ch}
+    .press-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.press-card{background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:var(--radius-lg);padding:1.2rem;min-height:245px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow-soft)}
+    .press-card .source{color:var(--brand);font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.press-card p{color:var(--muted)}.press-card a{color:var(--brand);font-weight:850}.press-card a:hover{text-decoration:underline;text-underline-offset:3px}
+    .ai-prompts{margin-top:1.25rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}.prompt-card{background:var(--brand-3);color:white;border-radius:20px;padding:1rem;border:1px solid rgba(255,255,255,.12)}.prompt-card small{color:rgba(255,255,255,.62);text-transform:uppercase;letter-spacing:.08em;font-weight:900}.prompt-card p{color:rgba(255,255,255,.82);margin:.5rem 0 0;font-size:.92rem}
+
+    .footer {
+      background: var(--brand-3);
+      color: white;
+      padding: 3rem 1.2rem;
+    }
+    .footer-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .footer p, .footer a { color: rgba(255,255,255,.75); }
+    .footer a:hover { color: white; }
+    .footer ul { list-style: none; padding: 0; margin: .8rem 0 0; display: grid; gap: .45rem; }
+    .footer-bottom {
+      max-width: var(--max);
+      margin: 2rem auto 0;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.62);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .92rem;
+    }
+
+    .mobile-menu { display: none; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .mobile-menu { display: inline-flex; }
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .hero-card { order: -1; }
+      .hero-photo { min-height: 380px; }
+      h1 { max-width: 13ch; }
+      .quick-search { grid-template-columns: 1fr 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .gallery-grid, .press-grid, .ai-prompts { grid-template-columns: 1fr 1fr; }
+      .photo-card.tall { grid-row: auto; min-height: 360px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner { display: none; }
+      .nav { padding: .8rem 1rem; }
+      .brand { min-width: auto; }
+      .brand span { display: none; }
+      .actions .btn-secondary { display: none; }
+      .hero { padding-top: 3rem; }
+      .section { padding: 3.5rem 1rem; }
+      .hero-actions .btn, .quick-search .btn { width: 100%; }
+      .quick-search, .cards, .form-grid, .footer-grid, .gallery-grid, .press-grid, .ai-prompts { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: .75rem; }
+      .hero-photo { min-height: 310px; }
+      .panel, .form-card { border-radius: 24px; padding: 1.2rem; }
+      .footer-bottom { display: block; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <div class="topbar" aria-label="Kontaktleiste">
+    <div class="topbar-inner">
+      <span>Mobile Tanzschule in Ravensburg, Kempten, Vogt, Krauchenwies & Umgebung</span>
+      <span><a href="tel:+4916098151053">0160 981 510 53</a> · <a href="mailto:kontakt@tanzschule-bianca.de">kontakt@tanzschule-bianca.de</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a class="brand" href="#top" aria-label="Tanzschule Bianca Startseite">
+        <span class="brand-mark">BF</span>
+        <span>
+          <strong>Tanzschule Bianca</strong>
+          <span>persönlich · mobil · herzlich</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#kurse">Kurse</a>
+        <a href="#hochzeit">Hochzeitstanz</a>
+        <a href="#standorte">Standorte</a>
+        <a href="#bilder">Bilder</a>
+        <a href="#medien">Medien</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="actions">
+        <a class="btn btn-secondary" href="tel:+4916098151053">Anrufen</a>
+        <a class="btn btn-primary" href="#kontakt">Anfrage starten</a>
+        <a class="btn btn-ghost mobile-menu" href="#kontakt">Menü</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inhalt">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Tanzen lernen ohne Druck</span>
+          <h1>Tanzkurse, die sich persönlich anfühlen.</h1>
+          <p class="lead">Für Paare, Singles, Brautpaare, Kinder und Gruppen: Bianca Fackler bringt Tanzfreude dorthin, wo Menschen gemeinsam schöner tanzen lernen möchten.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt">Probestunde oder Kurs anfragen</a>
+            <a class="btn btn-secondary" href="#kurse">Kurse ansehen</a>
+          </div>
+          <div class="trust-row" aria-label="Vorteile">
+            <span><i class="dot"></i> Seit 2008</span>
+            <span><i class="dot"></i> Viele Orte in der Region</span>
+            <span><i class="dot"></i> Privatstunden & Gruppen</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Aktueller Hinweis">
+          <div class="hero-photo">
+            <div class="next-course">
+              <small>Nächster Schritt</small>
+              <h3>Passenden Kurs finden</h3>
+              <p>Wählt Angebot und Ort – wir melden uns mit passenden Terminen und freien Plätzen.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container">
+        <form class="quick-search" aria-label="Schnelle Kursanfrage" onsubmit="event.preventDefault(); document.querySelector('#kontakt').scrollIntoView({behavior:'smooth'});">
+          <div class="field">
+            <label for="quick-offer">Ich suche</label>
+            <select id="quick-offer">
+              <option>Hochzeitstanz</option>
+              <option>Erwachsenenkurs</option>
+              <option>Kinderkurs</option>
+              <option>Privatstunde</option>
+              <option>Workshop</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quick-place">Ort</label>
+            <select id="quick-place">
+              <option>Ravensburg</option>
+              <option>Kempten</option>
+              <option>Vogt</option>
+              <option>Krauchenwies</option>
+              <option>Mengen</option>
+              <option>Anderer Ort</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quick-time">Wann?</label>
+            <select id="quick-time">
+              <option>So bald wie möglich</option>
+              <option>In den nächsten Wochen</option>
+              <option>Für ein bestimmtes Datum</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Passenden Kurs anfragen</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="kurse">
+      <div class="container">
+        <div class="section-head">
+          <h2>Für jeden Anlass der passende Tanzkurs.</h2>
+          <p>Die Karten sind als moderne Angebotsübersicht gedacht. Später können hier echte Termine, Preise und freie Plätze aus einer Kursverwaltung erscheinen.</p>
+        </div>
+        <div class="cards">
+          <article class="course-card">
+            <div>
+              <span class="tag">Paare & Singles</span>
+              <h3>Erwachsenenkurse</h3>
+              <p>Grundschritte, Führung, Führenlassen und Sicherheit auf der Tanzfläche — entspannt, verständlich und mit Freude.</p>
+            </div>
+            <div class="course-meta"><span>Standard/Latein</span><span>Discofox</span><span>Crashkurse</span></div>
+          </article>
+          <article class="course-card">
+            <div>
+              <span class="tag">Brautpaare</span>
+              <h3>Hochzeitstanz</h3>
+              <p>Vom sicheren Grundschritt bis zur individuellen Choreografie — passend zu Musik, Kleid, Location und Zeitplan.</p>
+            </div>
+            <div class="course-meta"><span>Privat</span><span>Gruppen</span><span>Last Minute</span></div>
+          </article>
+          <article class="course-card">
+            <div>
+              <span class="tag">Kinder & Jugendliche</span>
+              <h3>Kindertanz & Hip Hop</h3>
+              <p>Bewegung, Rhythmus und Selbstvertrauen: Kurse für Kinder und Jugendliche mit altersgerechter Energie.</p>
+            </div>
+            <div class="course-meta"><span>Früherziehung</span><span>Hip Hop</span><span>Teenies</span></div>
+          </article>
+          <article class="course-card">
+            <div>
+              <span class="tag">Individuell</span>
+              <h3>Privatstunden</h3>
+              <p>Persönlicher Unterricht für Einzelpersonen, Paare oder kleine Gruppen — auf Wunsch auch bei euch vor Ort.</p>
+            </div>
+            <div class="course-meta"><span>Flexibel</span><span>Persönlich</span><span>Zuhause möglich</span></div>
+          </article>
+          <article class="course-card">
+            <div>
+              <span class="tag">Swing & Specials</span>
+              <h3>Lindy Hop, Balboa & Workshops</h3>
+              <p>Spezialkurse und Workshops für alle, die neue Tanzstile ausprobieren oder vorhandene Kenntnisse vertiefen möchten.</p>
+            </div>
+            <div class="course-meta"><span>Workshops</span><span>Schnuppern</span><span>Events</span></div>
+          </article>
+          <article class="course-card">
+            <div>
+              <span class="tag">Feiern & Gruppen</span>
+              <h3>Animation & Shows</h3>
+              <p>Tanzanimation, Hochzeitsshows und Gruppenprogramme für besondere Momente mit viel Bewegung und guter Stimmung.</p>
+            </div>
+            <div class="course-meta"><span>Hochzeiten</span><span>Feste</span><span>Gruppen</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hochzeit">
+      <div class="container split">
+        <div class="panel">
+          <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.16)">Hochzeitstanz</span>
+          <h2 style="margin-top:1rem">Euer erster Tanz soll sich gut anfühlen.</h2>
+          <p>Diese Sektion ist als eigene Landingpage-Vorschau gedacht: emotional, klar und mit direktem Anfrageweg für Brautpaare.</p>
+          <a class="btn btn-primary" style="background:#fff;color:var(--brand-3)" href="#kontakt">Hochzeitstanz anfragen</a>
+        </div>
+        <div class="steps" id="ablauf">
+          <div class="step">
+            <div class="num">1</div>
+            <div><h3>Kurz anfragen</h3><p>Musik, Termin, Ort und Erfahrung angeben. Telefonisch oder über das Formular.</p></div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div><h3>Passenden Rahmen wählen</h3><p>Privatstunde, Crashkurs oder individuelle Choreografie — je nach Wunsch und Zeit.</p></div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div><h3>Entspannt üben</h3><p>Schritt für Schritt lernen, ohne Druck und passend zu euch als Paar.</p></div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div><h3>Sicher tanzen</h3><p>Mit einem guten Gefühl in den Hochzeitstag starten.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="standorte">
+      <div class="container">
+        <div class="section-head">
+          <h2>Tanzen in eurer Nähe.</h2>
+          <p>Für lokales Google-Marketing können aus diesen Orten später eigene SEO-Seiten entstehen, z. B. „Hochzeitstanz Ravensburg“ oder „Tanzkurs Kempten“.</p>
+        </div>
+        <div class="locations" aria-label="Standorte">
+          <a href="#kontakt">Ravensburg</a>
+          <a href="#kontakt">Kempten</a>
+          <a href="#kontakt">Vogt</a>
+          <a href="#kontakt">Krauchenwies</a>
+          <a href="#kontakt">Mengen</a>
+          <a href="#kontakt">Sigmaringen</a>
+          <a href="#kontakt">Baienfurt</a>
+          <a href="#kontakt">Martinszell</a>
+          <a href="#kontakt">Überlingen</a>
+          <a href="#kontakt">Füssen</a>
+          <a href="#kontakt">Kreuzlingen</a>
+          <a href="#kontakt">anderer Ort</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section image-section" id="bilder">
+      <div class="container">
+        <div class="section-head">
+          <h2>Echte Bilder und AI-Bildideen kombiniert.</h2>
+          <p>Für die Musterseite sind echte Bilder aus der bestehenden Website lokal in den Projektordner übernommen. Zusätzlich gibt es klar gekennzeichnete AI-Entwurfsbilder als Stil- und Kampagnenideen.</p>
+        </div>
+        <div class="gallery-tabs" aria-label="Bildfilter"><button class="is-active" type="button" data-filter="all">Alle</button><button type="button" data-filter="real">Echte Bilder</button><button type="button" data-filter="ai">AI-Entwürfe</button></div>
+        <div class="gallery-grid" id="galleryGrid">
+          <figure class="photo-card tall" data-kind="real"><img src="assets/real/slide-1.jpg" alt="Echtes Bildmaterial der Tanzschule Bianca aus der bestehenden Website" loading="lazy"><figcaption class="photo-caption"><strong>Echtes Bildmaterial</strong><span>aus der bestehenden Website übernommen</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/real/bianca-2012a.jpg" alt="Bianca Fackler – echtes Bildmaterial" loading="lazy"><figcaption class="photo-caption"><strong>Bianca Fackler</strong><span>persönlicher Bezug und Vertrauen</span></figcaption></figure>
+          <figure class="photo-card" data-kind="ai"><img src="assets/ai/ai-hochzeitstanz.jpg" alt="AI-Entwurfsbild für Hochzeitstanz-Kampagne" loading="lazy"><figcaption class="photo-caption"><strong>Hochzeitstanz-Kampagne</strong><span>AI-Bild für Moodboard / Anzeigenentwurf</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/real/hochzeit.png" alt="Echtes Bildmaterial zum Hochzeitstanz" loading="lazy"><figcaption class="photo-caption"><strong>Hochzeitstanz</strong><span>echtes Material von tanzschule-bianca.de</span></figcaption></figure>
+          <figure class="photo-card" data-kind="ai"><img src="assets/ai/ai-tanzkurs.jpg" alt="AI-Entwurfsbild für Erwachsenenkurse" loading="lazy"><figcaption class="photo-caption"><strong>Erwachsenenkurse</strong><span>AI-Stimmungsbild für neue Landingpages</span></figcaption></figure>
+          <figure class="photo-card" data-kind="ai"><img src="assets/ai/ai-kinderkurs.jpg" alt="AI-Entwurfsbild für Kinderkurs-Marketing" loading="lazy"><figcaption class="photo-caption"><strong>Kinder & Jugendliche</strong><span>AI-Bildidee für Kampagnenmotive</span></figcaption></figure>
+        </div>
+        <p class="asset-note"><strong>Wichtig:</strong> Echte Bilder sollten vor Veröffentlichung final hinsichtlich Nutzungsrechten, Einwilligungen und Bildqualität geprüft werden. AI-Bilder sind als Entwürfe klar gekennzeichnet und sollten nicht als echte Unterrichtsfotos ausgegeben werden.</p>
+        <div class="ai-prompts" aria-label="AI-Bildprompts"><div class="prompt-card"><small>Prompt Hochzeit</small><p>Eleganter Hochzeitstanz-Unterricht, warmes Licht, natürlich, emotional, keine Logos, keine Schrift.</p></div><div class="prompt-card"><small>Prompt Erwachsene</small><p>Paare lernen entspannt tanzen, freundliche Tanzlehrerin, Gemeindehalle, burgund/creme, authentisch.</p></div><div class="prompt-card"><small>Prompt Kinder</small><p>Fröhlicher Kindertanzkurs, helle sichere Atmosphäre, Bewegung, Rhythmus, natürlich und familienfreundlich.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="medien">
+      <div class="container">
+        <div class="section-head"><h2>Medien, Presse und aktuelle Meldungen.</h2><p>Aus öffentlich erreichbaren Inhalten der bestehenden Website wurden Presse-/Aktuelles-Bezüge als moderne Vertrauenselemente aufbereitet.</p></div>
+        <div class="press-grid">
+          <article class="press-card"><div><span class="source">Pressebereich</span><h3>Die Presse berichtet über Bianca Fackler</h3><p>Die bestehende Website nennt Presseberichte, u. a. mit Bezug auf die Schwäbische Zeitung und Auftritte / Choreografie.</p></div><a href="https://www.tanzschule-bianca.de/presse/" target="_blank" rel="noopener">Pressebereich öffnen</a></article>
+          <article class="press-card"><div><span class="source">Aktuelles</span><h3>Bianca Fackler tanzt mit Peter Kraus</h3><p>Eine Meldung der bestehenden Website verweist auf den Auftritt / Bericht „Peter Kraus tanzt mit Bianca Fackler“.</p></div><a href="https://www.tanzschule-bianca.de/aktuelles/bianca-fackler-tanzt-mit-peter-kraus/" target="_blank" rel="noopener">Meldung ansehen</a></article>
+          <article class="press-card"><div><span class="source">Wochenblatt</span><h3>Bericht über Lindy Hop</h3><p>Die Website führt einen Wochenblatt-Bericht über Bianca Fackler und Lindy Hop, einen Tanzstil aus dem amerikanischen Swing.</p></div><a href="https://www.tanzschule-bianca.de/aktuelles/bericht-ueber-bianca-fackler-im-wochenblatt/" target="_blank" rel="noopener">Bericht öffnen</a></article>
+          <article class="press-card"><div><span class="source">Kursmeldung</span><h3>Swing Time: Vogt, Krauchenwies, Kempten</h3><p>Aktuelle Kurskommunikation zu Swing, Lindy Hop, Charleston und Shag kann künftig als Website-News und Social-Post recycelt werden.</p></div><a href="https://www.tanzschule-bianca.de/aktuelles/neu-swing-time-vogt-mengen-kempten-im-allgaeu/" target="_blank" rel="noopener">Meldung ansehen</a></article>
+          <article class="press-card"><div><span class="source">Workshop</span><h3>Discofox Workshop</h3><p>Workshop-Meldungen eignen sich sehr gut für wiederkehrende Kampagnen: Website, Facebook, Instagram und Newsletter.</p></div><a href="https://www.tanzschule-bianca.de/aktuelles/discofox-workshop/" target="_blank" rel="noopener">Workshop ansehen</a></article>
+          <article class="press-card"><div><span class="source">Marketing-Idee</span><h3>Aus Meldungen werden Kampagnen</h3><p>Jede Meldung kann künftig automatisch zu Social-Media-Posts, Newsletter-Absätzen und Google-Unternehmensprofil-Beiträgen werden.</p></div><a href="#kontakt">Kampagne planen</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonial-wrap">
+      <div class="quote">
+        <blockquote>„Persönlicher Unterricht, klare Schritte und die Freude am Tanzen stehen im Mittelpunkt.“</blockquote>
+        <p>Platzhalter für echte Kundenstimmen, Google-Bewertungen oder Pressezitate.</p>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Unverbindlich anfragen</span>
+          <h2 style="margin-top:1rem">Welcher Kurs passt zu euch?</h2>
+          <p class="lead">Dieses Formular ist ein Muster. In der echten Website kann es später direkt ins CRM führen, automatische E-Mails auslösen und Anmeldungen sauber sortieren.</p>
+          <div class="trust-row">
+            <span><i class="dot"></i> Antwort per Telefon, E-Mail oder WhatsApp</span>
+            <span><i class="dot"></i> DSGVO-Hinweis integriert</span>
+            <span><i class="dot"></i> Kursinteresse direkt auswählbar</span>
+          </div>
+        </div>
+        <form class="form-card" id="demoForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" autocomplete="name" required placeholder="Vor- und Nachname" />
+            </div>
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" name="phone" autocomplete="tel" placeholder="Telefonnummer" />
+            </div>
+            <div class="field">
+              <label for="email">E-Mail *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.de" />
+            </div>
+            <div class="field">
+              <label for="interest">Interesse</label>
+              <select id="interest" name="interest">
+                <option>Hochzeitstanz</option>
+                <option>Erwachsenenkurs</option>
+                <option>Kinderkurs / Hip Hop</option>
+                <option>Privatstunde</option>
+                <option>Workshop / Event</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="place">Gewünschter Ort</label>
+              <input id="place" name="place" placeholder="z. B. Ravensburg, Kempten, Vogt" />
+            </div>
+            <div class="field">
+              <label for="contact-way">Kontakt bevorzugt</label>
+              <select id="contact-way" name="contact-way">
+                <option>Telefon</option>
+                <option>E-Mail</option>
+                <option>WhatsApp</option>
+              </select>
+            </div>
+            <div class="field wide">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" placeholder="Worum geht es? Gibt es Wunschtermine, Musik, Vorerfahrung oder besondere Fragen?"></textarea>
+            </div>
+          </div>
+          <label class="privacy">
+            <input type="checkbox" required />
+            <span>Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Details gehören später in die Datenschutzerklärung.</span>
+          </label>
+          <button class="btn btn-primary" type="submit">Anfrage absenden</button>
+          <div class="success" role="status" aria-live="polite">Demo: Die Anfrage wurde nicht wirklich versendet. Auf der echten Website würde sie jetzt im CRM landen.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:white">
+          <span class="brand-mark">BF</span>
+          <span><strong>Tanzschule Bianca</strong><span style="color:rgba(255,255,255,.7)">Mobile Tanzschule seit 2008</span></span>
+        </div>
+        <p>Moderne Musterwebseite für die künftige digitale Ausrichtung: klare Angebote, einfache Anfrage und bessere lokale Auffindbarkeit.</p>
+      </div>
+      <div>
+        <strong>Kurse</strong>
+        <ul>
+          <li><a href="#kurse">Erwachsene</a></li>
+          <li><a href="#hochzeit">Hochzeitstanz</a></li>
+          <li><a href="#kurse">Kinder & Jugendliche</a></li>
+          <li><a href="#kurse">Privatstunden</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Region</strong>
+        <ul>
+          <li><a href="#standorte">Ravensburg</a></li>
+          <li><a href="#standorte">Kempten</a></li>
+          <li><a href="#standorte">Vogt</a></li>
+          <li><a href="#standorte">Krauchenwies</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Kontakt</strong>
+        <ul>
+          <li><a href="tel:+4916098151053">0160 981 510 53</a></li>
+          <li><a href="mailto:kontakt@tanzschule-bianca.de">kontakt@tanzschule-bianca.de</a></li>
+          <li><a href="#kontakt">Formular</a></li>
+          <li><a href="#">Impressum / Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tanzschule Bianca Fackler – Musterentwurf</span>
+      <span>Hinweis: Texte, E-Mail und Formulare sind Entwurfs-/Platzhalterdaten.</span>
+    </div>
+  </footer>
+
+  <script>
+    const demoForm = document.querySelector('#demoForm');
+    const success = document.querySelector('.success');
+    demoForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      success.classList.add('is-visible');
+      success.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+
+    const galleryButtons = document.querySelectorAll('.gallery-tabs button');
+    const galleryItems = document.querySelectorAll('.photo-card[data-kind]');
+    galleryButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        galleryButtons.forEach((b) => b.classList.toggle('is-active', b === button));
+        galleryItems.forEach((item) => { item.hidden = filter !== 'all' && item.dataset.kind !== filter; });
+      });
+    });
+  </script>
+</body>
+</html>

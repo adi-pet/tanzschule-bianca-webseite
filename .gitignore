@@ -1,0 +1,11 @@
+# Betriebssystem / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporäre Dateien
+*.tmp
+*.bak
+*.log
+__pycache__/
