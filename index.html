@@ -206,7 +206,7 @@
       border-radius: 26px;
       background:
         linear-gradient(160deg, rgba(47,27,51,.18), rgba(123,35,71,.12)),
-        url('assets/real/slide-1.jpg') center / cover;
+        url('assets/bianca-data/hero-bianca.jpg') center / cover;
       position: relative;
       overflow: hidden;
       display: grid;
@@ -429,6 +429,14 @@
     .press-card .source{color:var(--brand);font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.press-card p{color:var(--muted)}.press-card a{color:var(--brand);font-weight:850}.press-card a:hover{text-decoration:underline;text-underline-offset:3px}
     .ai-prompts{margin-top:1.25rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}.prompt-card{background:var(--brand-3);color:white;border-radius:20px;padding:1rem;border:1px solid rgba(255,255,255,.12)}.prompt-card small{color:rgba(255,255,255,.62);text-transform:uppercase;letter-spacing:.08em;font-weight:900}.prompt-card p{color:rgba(255,255,255,.82);margin:.5rem 0 0;font-size:.92rem}
 
+
+    .bianca-feature{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+    .bianca-feature-card{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft)}
+    .bianca-feature-card img{width:100%;height:280px;object-fit:cover}.bianca-feature-card div{padding:1rem}.bianca-feature-card p{color:var(--muted)}
+    .schedule-card{background:var(--brand-3);color:white;border-radius:var(--radius-xl);padding:1.4rem;box-shadow:var(--shadow)}
+    .schedule-card h3{color:white}.schedule-card ul{margin:.9rem 0 0;padding-left:1.1rem;color:rgba(255,255,255,.84)}.schedule-card li{margin:.35rem 0}
+    .story-card{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:var(--radius-xl);padding:1.4rem;box-shadow:var(--shadow-soft)}.story-card p{color:var(--muted)}
+
     .footer {
       background: var(--brand-3);
       color: white;
@@ -468,7 +476,7 @@
       h1 { max-width: 13ch; }
       .quick-search { grid-template-columns: 1fr 1fr; }
       .cards { grid-template-columns: 1fr 1fr; }
-      .gallery-grid, .press-grid, .ai-prompts { grid-template-columns: 1fr 1fr; }
+      .gallery-grid, .press-grid, .ai-prompts, .bianca-feature { grid-template-columns: 1fr 1fr; }
       .photo-card.tall { grid-row: auto; min-height: 360px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -482,7 +490,7 @@
       .hero { padding-top: 3rem; }
       .section { padding: 3.5rem 1rem; }
       .hero-actions .btn, .quick-search .btn { width: 100%; }
-      .quick-search, .cards, .form-grid, .footer-grid, .gallery-grid, .press-grid, .ai-prompts { grid-template-columns: 1fr; }
+      .quick-search, .cards, .form-grid, .footer-grid, .gallery-grid, .press-grid, .ai-prompts, .bianca-feature { grid-template-columns: 1fr; }
       .section-head { display: block; }
       .section-head p { margin-top: .75rem; }
       .hero-photo { min-height: 310px; }
@@ -520,6 +528,7 @@
         <a href="#standorte">Standorte</a>
         <a href="#bilder">Bilder</a>
         <a href="#medien">Medien</a>
+        <a href="#bianca-daten">Material</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#kontakt">Kontakt</a>
       </div>
@@ -538,6 +547,7 @@
           <span class="eyebrow">Tanzen lernen ohne Druck</span>
           <h1>Tanzkurse, die sich persönlich anfühlen.</h1>
           <p class="lead">Für Paare, Singles, Brautpaare, Kinder und Gruppen: Bianca Fackler bringt Tanzfreude dorthin, wo Menschen gemeinsam schöner tanzen lernen möchten.</p>
+          <p class="lead bianca-data-note" style="font-size:1rem;margin-top:.8rem">Jetzt mit echtem Werbe-, Kurs- und Bildmaterial aus dem Bianca-Ordner überarbeitet.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Probestunde oder Kurs anfragen</a>
             <a class="btn btn-secondary" href="#kurse">Kurse ansehen</a>
@@ -712,20 +722,57 @@
     <section class="section image-section" id="bilder">
       <div class="container">
         <div class="section-head">
-          <h2>Echte Bilder und AI-Bildideen kombiniert.</h2>
-          <p>Für die Musterseite sind echte Bilder aus der bestehenden Website lokal in den Projektordner übernommen. Zusätzlich gibt es klar gekennzeichnete AI-Entwurfsbilder als Stil- und Kampagnenideen.</p>
+          <h2>Echte Bilder und Werbematerial aus dem Bianca-Ordner.</h2>
+          <p>Diese Version nutzt die lokalen Daten aus <strong>C:\Users\apet\Desktop\Bianca</strong>: Banner, Kursplakate, Tanzfotos und Kampagnenmotive. AI-Bilder bleiben nur als Entwurfsoption erhalten.</p>
         </div>
-        <div class="gallery-tabs" aria-label="Bildfilter"><button class="is-active" type="button" data-filter="all">Alle</button><button type="button" data-filter="real">Echte Bilder</button><button type="button" data-filter="ai">AI-Entwürfe</button></div>
+        <div class="gallery-tabs" aria-label="Bildfilter"><button class="is-active" type="button" data-filter="all">Alle</button><button type="button" data-filter="real">Bianca-Material</button><button type="button" data-filter="ai">AI-Entwürfe</button></div>
         <div class="gallery-grid" id="galleryGrid">
-          <figure class="photo-card tall" data-kind="real"><img src="assets/real/slide-1.jpg" alt="Echtes Bildmaterial der Tanzschule Bianca aus der bestehenden Website" loading="lazy"><figcaption class="photo-caption"><strong>Echtes Bildmaterial</strong><span>aus der bestehenden Website übernommen</span></figcaption></figure>
-          <figure class="photo-card" data-kind="real"><img src="assets/real/bianca-2012a.jpg" alt="Bianca Fackler – echtes Bildmaterial" loading="lazy"><figcaption class="photo-caption"><strong>Bianca Fackler</strong><span>persönlicher Bezug und Vertrauen</span></figcaption></figure>
-          <figure class="photo-card" data-kind="ai"><img src="assets/ai/ai-hochzeitstanz.jpg" alt="AI-Entwurfsbild für Hochzeitstanz-Kampagne" loading="lazy"><figcaption class="photo-caption"><strong>Hochzeitstanz-Kampagne</strong><span>AI-Bild für Moodboard / Anzeigenentwurf</span></figcaption></figure>
-          <figure class="photo-card" data-kind="real"><img src="assets/real/hochzeit.png" alt="Echtes Bildmaterial zum Hochzeitstanz" loading="lazy"><figcaption class="photo-caption"><strong>Hochzeitstanz</strong><span>echtes Material von tanzschule-bianca.de</span></figcaption></figure>
-          <figure class="photo-card" data-kind="ai"><img src="assets/ai/ai-tanzkurs.jpg" alt="AI-Entwurfsbild für Erwachsenenkurse" loading="lazy"><figcaption class="photo-caption"><strong>Erwachsenenkurse</strong><span>AI-Stimmungsbild für neue Landingpages</span></figcaption></figure>
-          <figure class="photo-card" data-kind="ai"><img src="assets/ai/ai-kinderkurs.jpg" alt="AI-Entwurfsbild für Kinderkurs-Marketing" loading="lazy"><figcaption class="photo-caption"><strong>Kinder & Jugendliche</strong><span>AI-Bildidee für Kampagnenmotive</span></figcaption></figure>
+          <figure class="photo-card tall" data-kind="real"><img src="assets/bianca-data/hero-bianca.jpg" alt="Bianca Fackler Tanzschule Banner" loading="lazy"><figcaption class="photo-caption"><strong>Bianca Fackler</strong><span>echtes Banner-/Werbematerial aus dem Ordner</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/bianca-data/lindy-action.jpg" alt="Lindy-Hop Tanzszene" loading="lazy"><figcaption class="photo-caption"><strong>Lindy Hop in Aktion</strong><span>lebendiges Tanzfoto aus dem Bestand</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/bianca-data/hochzeitskurse.jpg" alt="Hochzeitskurse Werbemotiv" loading="lazy"><figcaption class="photo-caption"><strong>Hochzeitskurse</strong><span>vorhandenes Kampagnenmotiv</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/bianca-data/vogt-swing.jpg" alt="Swing Charleston Lindy Hop Vogt Plakat" loading="lazy"><figcaption class="photo-caption"><strong>Swing / Charleston / Lindy Hop</strong><span>Kursplakat Vogt</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/bianca-data/discofox-light.jpg" alt="Discofox Lichtstimmung" loading="lazy"><figcaption class="photo-caption"><strong>Discofox</strong><span>Motiv für Workshop und Partygefühl</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/bianca-data/team-party.jpg" alt="Bianca und Kursteilnehmerinnen" loading="lazy"><figcaption class="photo-caption"><strong>Menschen & Stimmung</strong><span>persönlich, herzlich, nahbar</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/bianca-data/hiphop-banner.jpg" alt="Hip Hop Banner" loading="lazy"><figcaption class="photo-caption"><strong>Hip Hop</strong><span>Material für Kinder- und Jugendkurse</span></figcaption></figure>
+          <figure class="photo-card" data-kind="real"><img src="assets/bianca-data/salsa-banner.jpg" alt="Salsa Banner" loading="lazy"><figcaption class="photo-caption"><strong>Salsa</strong><span>Material für Themenabende und Specials</span></figcaption></figure>
+          <figure class="photo-card" data-kind="ai"><img src="assets/ai/ai-hochzeitstanz.jpg" alt="AI-Entwurfsbild für Hochzeitstanz-Kampagne" loading="lazy"><figcaption class="photo-caption"><strong>AI-Moodboard</strong><span>nur als Entwurf gekennzeichnet</span></figcaption></figure>
         </div>
-        <p class="asset-note"><strong>Wichtig:</strong> Echte Bilder sollten vor Veröffentlichung final hinsichtlich Nutzungsrechten, Einwilligungen und Bildqualität geprüft werden. AI-Bilder sind als Entwürfe klar gekennzeichnet und sollten nicht als echte Unterrichtsfotos ausgegeben werden.</p>
-        <div class="ai-prompts" aria-label="AI-Bildprompts"><div class="prompt-card"><small>Prompt Hochzeit</small><p>Eleganter Hochzeitstanz-Unterricht, warmes Licht, natürlich, emotional, keine Logos, keine Schrift.</p></div><div class="prompt-card"><small>Prompt Erwachsene</small><p>Paare lernen entspannt tanzen, freundliche Tanzlehrerin, Gemeindehalle, burgund/creme, authentisch.</p></div><div class="prompt-card"><small>Prompt Kinder</small><p>Fröhlicher Kindertanzkurs, helle sichere Atmosphäre, Bewegung, Rhythmus, natürlich und familienfreundlich.</p></div></div>
+        <p class="asset-note"><strong>Hinweis:</strong> Vor finaler Veröffentlichung bitte Bildrechte und Einwilligungen prüfen. Einige Motive stammen aus älteren Werbedaten und sollten ggf. aktualisiert oder durch neue Shootings ersetzt werden.</p>
+      </div>
+    </section>
+
+
+    <section class="section" id="bianca-daten">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kurse und Geschichten aus dem echten Material.</h2>
+          <p>Aus den lokalen Dokumenten wurden konkrete Kursinformationen und Pressetexte übernommen und webtauglich gekürzt.</p>
+        </div>
+        <div class="bianca-feature">
+          <article class="schedule-card">
+            <h3>Krauchenwies · Pfarrsaal Kirchberg 2</h3>
+            <ul>
+              <li>Montags 17:00 Uhr · Tänzerische Früherziehung ab 4 Jahren</li>
+              <li>17:45 Uhr · Hip Hop open level</li>
+              <li>18:30 Uhr · Discofox all level</li>
+              <li>19:30 Uhr · Hochzeitskurs – Standard / Latein</li>
+              <li>20:30 Uhr · Lindy Hop</li>
+            </ul>
+          </article>
+          <article class="story-card">
+            <h3>Bianca Fackler verzaubert „Schwanensee“</h3>
+            <p>Aus dem Pressematerial: Für die Neuverfilmung des ARD-Märchenfilms „Das Märchen vom Schwanensee“ wirkte Bianca Fackler an besonderen Drehorten wie Schloss Monrepos und Schloss Sigmaringen mit. Als Choreografin und Tanzpädagogin brachte sie Erfahrung, Gespür für Menschen und märchenhafte Tanzatmosphäre in das Projekt.</p>
+            <p>Diese Geschichte eignet sich sehr gut als Vertrauens- und Pressebereich auf der neuen Website.</p>
+          </article>
+          <article class="bianca-feature-card">
+            <img src="assets/bianca-data/lindy-krauchenwies.jpg" alt="Lindy Hop Plakat Krauchenwies" loading="lazy">
+            <div><h3>Lindy Hop & Swing</h3><p>Bestehende Plakate zeigen klar: Swing, Charleston und Lindy Hop sind starke Spezialangebote und sollten eigene Landingpages bekommen.</p></div>
+          </article>
+          <article class="bianca-feature-card">
+            <img src="assets/bianca-data/frueherziehung-banner.jpg" alt="Tänzerische Früherziehung Banner" loading="lazy">
+            <div><h3>Kinderkurse</h3><p>Tänzerische Früherziehung, Hip Hop und Jugendkurse bekommen mit vorhandenen Bannern eine deutlich sichtbarere Rolle.</p></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -733,7 +780,7 @@
       <div class="container">
         <div class="section-head"><h2>Medien, Presse und aktuelle Meldungen.</h2><p>Aus öffentlich erreichbaren Inhalten der bestehenden Website wurden Presse-/Aktuelles-Bezüge als moderne Vertrauenselemente aufbereitet.</p></div>
         <div class="press-grid">
-          <article class="press-card"><div><span class="source">Pressebereich</span><h3>Die Presse berichtet über Bianca Fackler</h3><p>Die bestehende Website nennt Presseberichte, u. a. mit Bezug auf die Schwäbische Zeitung und Auftritte / Choreografie.</p></div><a href="https://www.tanzschule-bianca.de/presse/" target="_blank" rel="noopener">Pressebereich öffnen</a></article>
+          <article class="press-card"><div><span class="source">Pressebereich</span><h3>Die Presse berichtet über Bianca Fackler</h3><p>Die vorhandenen Presseunterlagen enthalten zusätzlich neues Material zu „Schwanensee“, Choreografie und regionaler Tanzarbeit.</p></div><a href="https://www.tanzschule-bianca.de/presse/" target="_blank" rel="noopener">Pressebereich öffnen</a></article>
           <article class="press-card"><div><span class="source">Aktuelles</span><h3>Bianca Fackler tanzt mit Peter Kraus</h3><p>Eine Meldung der bestehenden Website verweist auf den Auftritt / Bericht „Peter Kraus tanzt mit Bianca Fackler“.</p></div><a href="https://www.tanzschule-bianca.de/aktuelles/bianca-fackler-tanzt-mit-peter-kraus/" target="_blank" rel="noopener">Meldung ansehen</a></article>
           <article class="press-card"><div><span class="source">Wochenblatt</span><h3>Bericht über Lindy Hop</h3><p>Die Website führt einen Wochenblatt-Bericht über Bianca Fackler und Lindy Hop, einen Tanzstil aus dem amerikanischen Swing.</p></div><a href="https://www.tanzschule-bianca.de/aktuelles/bericht-ueber-bianca-fackler-im-wochenblatt/" target="_blank" rel="noopener">Bericht öffnen</a></article>
           <article class="press-card"><div><span class="source">Kursmeldung</span><h3>Swing Time: Vogt, Krauchenwies, Kempten</h3><p>Aktuelle Kurskommunikation zu Swing, Lindy Hop, Charleston und Shag kann künftig als Website-News und Social-Post recycelt werden.</p></div><a href="https://www.tanzschule-bianca.de/aktuelles/neu-swing-time-vogt-mengen-kempten-im-allgaeu/" target="_blank" rel="noopener">Meldung ansehen</a></article>
